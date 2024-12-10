@@ -1,8 +1,9 @@
 return{
 	{
-		"craftzdog/solarized-osaka.nvim",
-		lazy = false,
+		"kvrohit/rasmus.nvim",
 		priority = 1000,
-		opts = {},
+		config = function()
+			vim.cmd([[colorscheme rasmus]])
+		end,
 	}
 }
