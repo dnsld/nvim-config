@@ -3,22 +3,33 @@ return {
   event = "VeryLazy",
   version = false,
   opts = {
-    provider = "gemini", -- Set Gemini as the provider
-    gemini = {
-      -- You'll need to specify the Gemini model you want to use.
-      -- "gemini-1.5-pro-latest" is a good general-purpose option.
-      -- Check the avante.nvim or Google AI documentation for available model names.
-      -- model = "gemini-1.5-pro-latest",
-      model = "gemini-2.5-pro-preview-05-06",
-      -- You might be able to set other options here, similar to OpenAI or Claude,
-      -- such as temperature, max_tokens, etc.
-      -- Example (refer to avante.nvim documentation for exact Gemini options):
-      -- temperature = 0.7,
-      -- max_tokens = 4096,
-      -- timeout = 30000, -- In milliseconds
+    -- You can set your default provider here, e.g., "gemini" or "bedrock"
+    provider = "gemini",
+    providers = {
+      -- Your existing Gemini configuration
+      gemini = {
+        endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
+        model = "gemini-2.5-pro-preview-05-06",
+        extra_request_body = {
+          generationConfig = {
+            temperature = 0.75,
+          },
+        },
+      },
+      -- New Amazon Bedrock configuration
+      bedrock = {
+        -- Example model. You can change this to any supported Bedrock model.
+        model = "anthropic.claude-3-7-sonnet-20250219-v1:0",
+        -- You MUST specify your AWS region
+        aws_region = "us-east-1", -- Change this to your desired AWS region
+        -- Optional: specify an AWS profile if you don't want to use the default
+        aws_profile = "bedrock-dev",
+        extra_request_body = {
+          temperature = 0.75,
+          max_tokens = 8192,
+        },
+      },
     },
-    -- Ensure other provider configurations like 'openai' or 'claude' are removed or commented out
-    -- if you previously had them, to avoid confusion.
   },
   build = "make",
   dependencies = {
