@@ -1,8 +1,11 @@
 return {
-  "kvrohit/rasmus.nvim",
-  priority = 1000,
+  "metalelf0/black-metal-theme-neovim",
   lazy = false,
+  priority = 1000,
   config = function()
-    vim.cmd([[colorscheme rasmus]])
+    require("black-metal").setup({
+      theme = "thyrfing",
+    })
+    require("black-metal").load()
   end,
 }

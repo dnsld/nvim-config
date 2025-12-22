@@ -10,3 +10,6 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help ta
 vim.keymap.set("n", "<leader>dd", function()
 vim.api.nvim_put({ os.date("%Y-%m-%d") }, "c", true, true)
 end, { desc = "Paste current date" })
+
+vim.keymap.set('n', '<leader>oc', ":let @+ = expand('%:p')<CR>", { desc = 'Copy absolute file path' })
+vim.keymap.set('n', '<leader>oo', ":!open %:p<CR>", { desc = 'Open current file' })
