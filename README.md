@@ -5,11 +5,14 @@ A personalized Neovim configuration using Lua and the `lazy.nvim` plugin manager
 ## Features
 
 - **Plugin Management**: Uses `lazy.nvim` for efficient plugin management.
-- **File Explorer**: `nvim-tree` provides a file explorer.
+- **File Explorer**: Uses the built-in `Netrw`.
 - **Fuzzy Finder**: `telescope.nvim` for finding files, buffers, and more.
 - **Syntax Highlighting**: `nvim-treesitter` for improved syntax highlighting.
 - **Status Line**: `lualine.nvim` for a customized status line.
-- **Colorscheme**: Uses the `rasmus.nvim` colorscheme.
+- **Colorscheme**: Uses the `black-metal` (thyrfing) colorscheme.
+- **Markdown Rendering**: `render-markdown.nvim` for better Markdown viewing.
+- **Markdown Wrapping**: Automatically enables text wrapping and line breaking for Markdown files.
+- **MCP Hub**: `mcphub.nvim` for Model Context Protocol integration.
 
 ## Installation
 
@@ -24,13 +27,13 @@ A personalized Neovim configuration using Lua and the `lazy.nvim` plugin manager
 This configuration uses the following plugins:
 
 -   [lazy.nvim](https://github.com/folke/lazy.nvim): A modern plugin manager for Neovim.
--   [rasmus.nvim](https://github.com/kvrohit/rasmus.nvim): A dark colorscheme.
+-   [black-metal-theme-neovim](https://github.com/metalelf0/black-metal-theme-neovim): A dark colorscheme.
 -   [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim): A status line for Neovim.
--   [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua): A file explorer.
--   [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons): Icons for `nvim-tree`.
 -   [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim): A fuzzy finder.
 -   [plenary.nvim](https://github.com/nvim-lua/plenary.nvim): A utility library for Neovim plugins.
 -   [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): A parser generator tool and incremental parsing library.
+-   [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim): Improve Markdown rendering.
+-   [mcphub.nvim](https://github.com/ravitemer/mcphub.nvim): Client for the Model Context Protocol.
 
 ## Configuration Structure
 
@@ -40,7 +43,18 @@ This configuration uses the following plugins:
     -   `options.lua`: Neovim options.
     -   `remaps.lua`: Key mappings.
 -   `lua/plugins/`: Contains the plugin configurations.
+-   `after/ftplugin/markdown.lua`: Markdown-specific settings.
 
 ## Keybindings
 
--   `<leader>e`: Toggle the file explorer (`nvim-tree`).
+### General
+-   `<leader>pv`: Open Netrw (File Explorer).
+-   `<leader>dd`: Paste current date.
+-   `<leader>oc`: Copy absolute file path to clipboard.
+-   `<leader>oo`: Open current file in default system application.
+
+### Telescope
+-   `<leader>ff`: Find files.
+-   `<leader>fg`: Live grep.
+-   `<leader>fb`: List buffers.
+-   `<leader>fh`: Help tags.
