@@ -12,7 +12,6 @@ A personalized Neovim configuration using Lua and the `lazy.nvim` plugin manager
 - **Colorscheme**: Uses the `black-metal` (thyrfing) colorscheme.
 - **Markdown Rendering**: `render-markdown.nvim` for better Markdown viewing.
 - **Markdown Wrapping**: Automatically enables text wrapping and line breaking for Markdown files.
-- **MCP Hub**: `mcphub.nvim` for Model Context Protocol integration.
 
 ## Installation
 
@@ -33,7 +32,6 @@ This configuration uses the following plugins:
 -   [plenary.nvim](https://github.com/nvim-lua/plenary.nvim): A utility library for Neovim plugins.
 -   [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): A parser generator tool and incremental parsing library.
 -   [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim): Improve Markdown rendering.
--   [mcphub.nvim](https://github.com/ravitemer/mcphub.nvim): Client for the Model Context Protocol.
 
 ## Configuration Structure
 
