@@ -1,5 +1,5 @@
--- primeagen
-vim.opt.guicursor = ""
+-- primeagen detaults to start, some tweaks
+vim.opt.guicursor = "a:ver25-blinkwait0-blinkon500-blinkoff500"
 
 vim.opt.nu = true
 
@@ -31,3 +31,6 @@ vim.opt.colorcolumn = "80"
 
 -- vim.opt.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
+
+-- Netrw: open in tree view by default.
+vim.g.netrw_liststyle = 3
